@@ -5,9 +5,9 @@ Calculando
 
   //var_dump($_POST); ; acessar atraves do POST nao e ideal pois expóem os dados
 
-  $matematica = new Matematica;
-
   require "../bootstrap.php";
+
+	require __APP_ROOT__ . '/src/model/Matematica.php';
 
   //var_dump(post('operador'));
   //var_dump(post('valor-1'));
@@ -16,6 +16,8 @@ Calculando
   $operadores = post('operador');
   $valores_1 = post('valor-1');
   $valores_2 = post('valor-2');
+
+	$matematica = new Matematica();
 
   /*for ($i=0; $i < count($operadores); $i++) { // count estima o tamanho do array
     # code...
@@ -38,44 +40,8 @@ Calculando
     }
 
     if (isset($valor_1) and isset($valor_2)) { // pode usar && = and
-      $resultado =  calcular($valor_1, $valor_2, $operador);
+      $resultado =  $matematica->calcular($valor_1, $valor_2, $operador);
     }
 
     var_dump($resultado);
   }
-
-/**
- *
- */
-class Matematica
-{
-  public function calcular($valor_1, $valor_2, $operador)
-  {
-      $resultado = 0;
-
-/*      if ($operador === '+') {
-          $resultado = $valor1 + $valor2;
-      } else {
-          $resultado = $valor1 - $valor2;
-      }
-      */
-
-      switch ($operador) {
-        case '+':
-          $resultado = $valor_1 + $valor_2;
-          break;
-        case '-':
-          $resultado = $valor_1 - $valor_2;
-          break;
-        case '*':
-          $resultado = $valor_1 * $valor_2;
-          break;
-        case '/':
-          $resultado = $valor_1 / $valor_2;
-          break;
-      }
-
-      return $resultado;
-  }
-
-}

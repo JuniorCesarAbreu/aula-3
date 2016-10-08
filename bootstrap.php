@@ -1,8 +1,8 @@
 <?php
 
-//define('__APP_ROOT__', __DIR__);
+define('__APP_ROOT__', __DIR__);
 
-define('__APP_ROOT__', 'C:/xampp/htdocs/aula-3');
+//define('__APP_ROOT__', 'C:/xampp/htdocs/aula-3');
 
 // função para retornar o indice
 function post($index){

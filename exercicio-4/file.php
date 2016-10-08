@@ -53,4 +53,8 @@ echo '<input type="submit" value="Calcular"/>';
 
 echo "</form>";
 
-?>
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
